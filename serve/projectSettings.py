@@ -42,7 +42,7 @@ class getProjectSettings:
                 'input': "Add JWT Auth And API ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
             },
             "LaravelIDEHelper": {
-                'value': 'n',
+                'value': 'y',
                 'input': "Add Laravel IDE Helper ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
             },
             "PowerfulWebpack": {
