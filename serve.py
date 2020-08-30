@@ -5,13 +5,12 @@ if __name__ == '__main__':
     # ? Get Project Settings
     projectSettingsObject = projectSettings.getProjectSettings()
     projectSettings = projectSettingsObject.getProjectSettings()
+    # projectSettingsObject.startInput()
 
     # ? Start Creating The Project
     createLaravelProjectObject = createLaravelProject.createLaravelProject(
-        projectSettings['projectName']['value'], projectSettings['projectPath']['value'])
+        projectSettings)
 
     print(createLaravelProjectObject.create())
-
-    projectSettingsObject.startInput()
 
     input("Press Enter To Close...")
