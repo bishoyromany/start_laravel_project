@@ -28,7 +28,8 @@ class getProjectSettings:
                 'validate': "path",
             },
             "adminPermissions": {
-                'value': self.defaultYesOrNoAnswer,
+                # 'value': self.defaultYesOrNoAnswer,
+                'value': 'y',
                 'input': "Add Admin Permissions ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "adminDashboard": {
@@ -36,7 +37,7 @@ class getProjectSettings:
                 'input': "Add Admin Dashboard ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "guzzle": {
-                'value': 'y',
+                'value': self.defaultYesOrNoAnswer,
                 'input': "Add Guzzle ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "JWTAuth": {

@@ -92,13 +92,41 @@ class createLaravelProject:
         #         }
         #     ]
         # },
-        "guzzle": {
-            "name": "Installing Guzzle....",
-            "command": "composer require guzzlehttp/guzzle:^7.0",
+        # "guzzle": {
+        #     "name": "Installing Guzzle....",
+        #     "command": "composer require guzzlehttp/guzzle:^7.0",
+        #     "path": "project",
+        #     "setting": "guzzle",
+        # },
+        "adminPermissions": {
+            "name": "Adding Admin Permissions....",
+            "command": "",
             "path": "project",
-            "setting": "guzzle",
-        },
-
+            "setting": "adminPermissions",
+            "file": [
+                {
+                    'from': "files/configs/",
+                    'fromFile': "AdminPermissions.php",
+                    "to": "app/Http/Middleware/",
+                    "toFile": "Admin.php",
+                    "type": "replace"
+                },
+                {
+                    'from': "files/migrations/",
+                    'fromFile': "usersPermissions.php",
+                    "to": "database/migrations/",
+                    "toFile": "2014_10_12_000000_create_users_table.php",
+                    "type": "replace"
+                },
+                {
+                    'from': "files/models/",
+                    'fromFile': "UserPermissions.php",
+                    "to": "app/",
+                    "toFile": "User.php",
+                    "type": "replace"
+                },
+            ]
+        }
 
 
     }
@@ -135,9 +163,9 @@ class createLaravelProject:
                         "_________________________________________________________________")
 
     def moveFile(self, old, oldFile, new, newFile, operationType):
-        oldFilePath = os.path.join(self.rootPath, old, oldFile)
-        newFilePath = os.path.join(self.projectPath, new, newFile)
-        if(operationType == 'replace'):
+        if operationType == 'replace':
+            oldFilePath = os.path.join(self.rootPath, old, oldFile)
+            newFilePath = os.path.join(self.projectPath, new, newFile)
             shutil.copyfile(oldFilePath, newFilePath)
 
         return "File " + newFile + " Moved To " + newFilePath

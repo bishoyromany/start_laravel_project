@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
              * admin = 1
              * user = 2
              */
-            $table->integer('role')->default(2);
             $table->integer('roleId')->default(2);
             $table->rememberToken();
             $table->timestamps();
