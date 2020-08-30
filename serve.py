@@ -5,7 +5,7 @@ if __name__ == '__main__':
     # ? Get Project Settings
     projectSettingsObject = projectSettings.getProjectSettings()
     projectSettings = projectSettingsObject.getProjectSettings()
-    # projectSettingsObject.startInput()
+    projectSettingsObject.startInput()
 
     # ? Start Creating The Project
     createLaravelProjectObject = createLaravelProject.createLaravelProject(

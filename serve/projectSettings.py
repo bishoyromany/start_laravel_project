@@ -19,7 +19,7 @@ class getProjectSettings:
         self.projectSettings = {
             "projectName": {
                 'value': "example_project",
-                'input': "Project Name ? [leave empty for default name] ",
+                'input': "Project Name ? [leave empty for default name] \n",
                 'validate': "path",
             },
             "projectPath": {
@@ -28,8 +28,7 @@ class getProjectSettings:
                 'validate': "path",
             },
             "adminPermissions": {
-                # 'value': self.defaultYesOrNoAnswer,
-                'value': 'y',
+                'value': self.defaultYesOrNoAnswer,
                 'input': "Add Admin Permissions ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "adminDashboard": {
@@ -38,27 +37,27 @@ class getProjectSettings:
             },
             "guzzle": {
                 'value': self.defaultYesOrNoAnswer,
-                'input': "Add Guzzle ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
+                'input': "Add Guzzle ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "JWTAuth": {
                 'value': self.defaultYesOrNoAnswer,
-                'input': "Add JWT Auth And API ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
+                'input': "Add JWT Auth And API ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "LaravelIDEHelper": {
                 'value': self.defaultYesOrNoAnswer,
-                'input': "Add Laravel IDE Helper ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
+                'input': "Add Laravel IDE Helper ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "PowerfullWebpack": {
                 'value': self.defaultYesOrNoAnswer,
-                'input': "Edit Webpack To Have Live Reload, Pug And SASS ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
+                'input': "Edit Webpack To Have Live Reload, Pug And SASS ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "ControllerStructure": {
                 'value': self.defaultYesOrNoAnswer,
-                'input': "Add Controller Sample File ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
+                'input': "Add Controller Sample File ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "viewStructure": {
                 'value': self.defaultYesOrNoAnswer,
-                'input': "Add View Sample File ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
+                'input': "Add View Sample File ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
         }
 
