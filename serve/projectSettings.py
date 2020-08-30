@@ -12,6 +12,8 @@ class getProjectSettings:
     defaultInputValidate = "yesOrNo"
     # red color
     redColor = "\x1B["
+    # default answer for Yes or No
+    defaultYesOrNoAnswer = 'n'
 
     def __init__(self):
         self.projectSettings = {
@@ -22,40 +24,40 @@ class getProjectSettings:
             },
             "projectPath": {
                 'value': self.currentPath,
-                'input': "Project Path ? [leave empty for current path] ",
+                'input': "Project Path ? [Current Path]\n",
                 'validate': "path",
             },
             "adminPermissions": {
-                'value': 'n',
-                'input': "Add Admin Permissions ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
+                'value': self.defaultYesOrNoAnswer,
+                'input': "Add Admin Permissions ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "adminDashboard": {
-                'value': 'n',
-                'input': "Add Admin Dashboard ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
+                'value': self.defaultYesOrNoAnswer,
+                'input': "Add Admin Dashboard ? {yesOrNo} [{value}]\n".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "guzzle": {
-                'value': 'n',
-                'input': "Add Guzzle ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
+                'value': 'y',
+                'input': "Add Guzzle ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "JWTAuth": {
-                'value': 'n',
-                'input': "Add JWT Auth And API ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
+                'value': self.defaultYesOrNoAnswer,
+                'input': "Add JWT Auth And API ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "LaravelIDEHelper": {
-                'value': 'y',
-                'input': "Add Laravel IDE Helper ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
+                'value': self.defaultYesOrNoAnswer,
+                'input': "Add Laravel IDE Helper ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
-            "PowerfulWebpack": {
-                'value': 'n',
-                'input': "Edit Webpack To Have Live Reload, Pug And SASS ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
+            "PowerfullWebpack": {
+                'value': self.defaultYesOrNoAnswer,
+                'input': "Edit Webpack To Have Live Reload, Pug And SASS ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "ControllerStructure": {
-                'value': 'n',
-                'input': "Add Controller Sample File ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
+                'value': self.defaultYesOrNoAnswer,
+                'input': "Add Controller Sample File ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
             "viewStructure": {
-                'value': 'n',
-                'input': "Add View Sample File ? {yesOrNo}".format(yesOrNo=self.inputYesOrNo),
+                'value': self.defaultYesOrNoAnswer,
+                'input': "Add View Sample File ? {yesOrNo} [{value}]".format(yesOrNo=self.inputYesOrNo, value=self.defaultYesOrNoAnswer),
             },
         }
 
@@ -70,9 +72,6 @@ class getProjectSettings:
                 self.projectSettings[settingKey]['value'] = userInput
             elif validateType == 'path':
                 continue
-            else:
-                print(
-                    self.redColor+"31;40m" + "Make Sure To Write A Correct Input, Script Will Use The Default Value Which Is n" + self.redColor + "0m")
 
     def validateInput(self, inputValue, validateType):
         if validateType == self.defaultInputValidate:

@@ -43,9 +43,18 @@ class createLaravelProject:
         # },
         # "laravelIDEHelperInstall": {
         #     "name": "Installing Laravel IDE Helper....",
-        #     "command": "composer require --dev barryvdh/laravel-ide-helper",
+        #     "command": "composer require --dev barryvdh/laravel-ide-helper && php artisan vendor:publish --provider=\"Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider\" --tag=config",
         #     "path": "project",
         #     "setting": "LaravelIDEHelper",
+        #     "file": [
+        #         {
+        #             'from': "files/configs/",
+        #             'fromFile': "AppServiceProvider.php",
+        #             "to": "app/Providers/",
+        #             "toFile": "AppServiceProvider.php",
+        #             "type": "replace"
+        #         }
+        #     ]
         # },
         # "laravelIDEHelperConfig": {
         #     "name": "Installing Laravel IDE Config....",
@@ -68,6 +77,30 @@ class createLaravelProject:
         #     "path": "project",
         #     "setting": "LaravelIDEHelper",
         # },
+        # "PowerfullWebpack": {
+        #     "name": "Updating Webpack....",
+        #     "command": "npm install --only=dev node-sass && npm install --only=dev pug-plain-loader && npm install --only=dev raw-loader && npm install --only=dev webpack-livereload-plugin",
+        #     "path": "project",
+        #     "setting": "PowerfullWebpack",
+        #     "file": [
+        #         {
+        #             'from': "files/configs/",
+        #             'fromFile': "webpack.mix.js",
+        #             "to": "",
+        #             "toFile": "webpack.mix.js",
+        #             "type": "replace"
+        #         }
+        #     ]
+        # },
+        "guzzle": {
+            "name": "Installing Guzzle....",
+            "command": "composer require guzzlehttp/guzzle:^7.0",
+            "path": "project",
+            "setting": "guzzle",
+        },
+
+
+
     }
 
     def __init__(self, projectSettings):
