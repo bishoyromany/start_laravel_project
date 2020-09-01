@@ -1,16 +1,22 @@
-import serve.projectSettings as projectSettings
-import serve.createLaravelProject as createLaravelProject
+import createProject.projectSettings as projectSettings
+import createProject.createLaravelProject as createLaravelProject
 
 if __name__ == '__main__':
-    # ? Get Project Settings
-    projectSettingsObject = projectSettings.getProjectSettings()
-    projectSettings = projectSettingsObject.getProjectSettings()
-    projectSettingsObject.startInput()
+    section = input(
+        "What do you wanna do ? [create/update] Project ['create'] \n")
 
-    # ? Start Creating The Project
-    createLaravelProjectObject = createLaravelProject.createLaravelProject(
-        projectSettings)
+    if section != 'update':
+        # ? Get Project Settings
+        projectSettingsObject = projectSettings.getProjectSettings()
+        projectSettings = projectSettingsObject.getProjectSettings()
+        projectSettingsObject.startInput()
 
-    print(createLaravelProjectObject.create())
+        # ? Start Creating The Project
+        createLaravelProjectObject = createLaravelProject.createLaravelProject(
+            projectSettings)
 
-    input("Press Enter To Close...")
+        print(createLaravelProjectObject.create())
+
+        input("Press Enter To Close...")
+    else:
+        print("Here :D")
